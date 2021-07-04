@@ -4,7 +4,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
-const Story = ({ data: { about } }) => (
+const Story = () => (
   <Layout>
 <article className="sheet">
     <div className="sheet__inner">
@@ -16,25 +16,3 @@ const Story = ({ data: { about } }) => (
 )
 
 export default Story
-
-export const query = graphql`
-  query StoryQuery {
-    about: datoCmsAboutPage {
-      seoMetaTags {
-        ...GatsbyDatoCmsSeoMetaTags
-      }
-      title
-      subtitle
-      photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
-        }
-      }
-      bioNode {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
-  }
-`
