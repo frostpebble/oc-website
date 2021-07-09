@@ -16,7 +16,7 @@ const Characters = ({ data}) => (
             <h2>{ char.name }</h2>
             <ReactMarkdown>{char.bio}</ReactMarkdown>
             <br/>
-            <a href={char.toyhouseLink}>View on toyhou.se</a>
+            <a href={char.toyhouseLink}>View on Toyhouse</a>
             <br/>
           </div>))}
         </div>

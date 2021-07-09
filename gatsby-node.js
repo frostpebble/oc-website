@@ -14,6 +14,13 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allDatoCmsStory {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allDatoCmsWork.edges.map(({ node: work }) => {
@@ -22,6 +29,15 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/work.js`),
           context: {
             slug: work.slug,
+          },
+        })
+      });
+      result.data.allDatoCmsStory.edges.map(({ node: fic }) => {
+        createPage({
+          path: `story/${fic.slug}`,
+          component: path.resolve(`./src/templates/fic.js`),
+          context: {
+            slug: fic.slug,
           },
         })
       })
