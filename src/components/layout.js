@@ -78,7 +78,7 @@ const TemplateWrapper = ({ children }) => {
                   <Link to="/story">Story</Link>
                 </li>
                 <li>
-                  <Link to="/gallery">Gallery</Link>
+                  <Link to="https://gallery.trial-by-fire.quest/">Gallery</Link>
                 </li>
               </ul>
               <p className="sidebar__social">
